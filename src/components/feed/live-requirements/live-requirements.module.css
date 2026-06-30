@@ -1,0 +1,79 @@
+.liveRequirementsSection {
+    @apply mt-[calc(var(--header-height)+8px)] pb-[calc(var(--footer-height)+var(--footer-height))]
+    grid relative;
+}
+
+.liveRequirementsSection::before,
+.liveRequirementsSection::after {
+    @apply content-[''] inline-block fixed w-full left-1/2 -translate-x-1/2 z-10 pointer-events-none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.liveRequirementsSection::before {
+    @apply top-0 h-[calc(var(--header-height)+2.5rem)];
+    background: linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.70) 60%,rgba(255,255,255,0) 100%);
+}
+
+.liveRequirementsSection::after {
+    @apply bottom-0 h-[calc(var(--footer-height)+1.8rem)];
+    background: linear-gradient(to top,rgba(255,255,255,1) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.70) 60%,rgba(255,255,255,0) 100%);
+}
+
+@supports (mask-image: linear-gradient(black, transparent)) or (-webkit-mask-image: linear-gradient(black, transparent)) {
+    .liveRequirementsSection::before,
+    .liveRequirementsSection::after {
+        background: rgba(255,255,255,.95);
+    }
+
+    .liveRequirementsSection::before {
+        -webkit-mask-image: linear-gradient(to bottom,black 40px,transparent);
+        mask-image: linear-gradient(to bottom,black 40px,transparent);
+    }
+
+    .liveRequirementsSection::after {
+        -webkit-mask-image: linear-gradient(to top,black 40px,transparent);
+        mask-image: linear-gradient(to top,black 40px,transparent);
+    }
+}
+
+.requirementCard {
+    @apply py-md border-b border-b-muted-foreground/25
+    px-2 grid grid-cols-4 gap-sm;
+}
+
+.requirementTitle {
+    @apply text-[clamp(14px,4.7vw,17px)] leading-[clamp(22px,6.8vw,26px)]
+    text-black font-bold col-span-4
+    xs:col-span-3;
+}
+
+.requirementMetaList {
+    @apply flex flex-col justify-start gap-y-[5px] flex-wrap col-span-4
+    xs:col-span-2;
+}
+
+.requirementBudget {
+    @apply px-xs text-[clamp(13px,5vw,15px)] text-black/75
+    font-semibold bg-muted-foreground/10 rounded-md w-fit border border-primary/75;
+}
+
+.requirementPostedTime {
+    @apply px-xs bg-transparent text-sm w-fit text-black/85;
+}
+
+.contactSellerButton {
+    @apply col-span-4
+    xs:col-span-2;
+}
+
+.contactSellerButton svg {
+    @apply w-4 h-4;
+}
+
+.contactSellerButton span {
+    @apply text-[clamp(13px,5vw,15px)];
+}
+
+
+

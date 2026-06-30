@@ -1,0 +1,18 @@
+.bottomNavigation {
+    @apply bg-transparent backdrop-blur-sm fixed bottom-0
+    left-1/2 -translate-x-1/2 w-full z-50 shadow-2xl grid grid-cols-3 items-center;
+}
+
+.navItem {
+    @apply pt-2 pb-1 px-lg flex justify-center items-center flex-col gap-y-px text-center
+    text-xs font-medium text-black/75 rounded-t-md
+    text-nowrap transition-all ease-linear duration-300;
+}
+
+.navItem.isActive {
+    @apply text-primary bg-primary/10;
+}
+
+.navItemIcon {
+    @apply text-xl;
+}

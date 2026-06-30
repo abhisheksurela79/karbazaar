@@ -1,0 +1,103 @@
+.dealerLoginSection {
+    @apply h-dvh grid grid-cols-1 items-center bg-[url('/dsrg.png')] bg-no-repeat
+    bg-center bg-cover aspect-[9/9] relative min-h-[650px] overflow-auto;
+}
+
+.brandIdentity {
+    @apply mx-auto text-center flex flex-col justify-end items-center mb-lg h-full;
+}
+
+.brandLogo {
+    @apply w-[clamp(155px,50vw,230px)] select-none;
+}
+
+.dealerNetworkLabel {
+    @apply text-2xs text-primary uppercase font-medium tracking-widest mt-2;
+}
+
+.verificationBanner {
+    @apply flex items-center gap-sm text-start mt-[clamp(0.95rem,2.2vw,2rem)];
+}
+
+.verification {
+    @apply bg-primary/10 text-primary w-[clamp(40px,2.1vw,45px)] h-[clamp(40px,2.1vw,45px)]
+    flex justify-center items-center rounded-full aspect-square;
+}
+
+.verificationContent {
+    @apply text-sm font-medium;
+}
+
+.verificationTitle {
+    @apply text-white;
+}
+
+.verificationTagline {
+    @apply text-[#aaaaacd9] block -mt-px;
+}
+
+.welcomeHandIcon {
+    @apply w-lg select-none;
+}
+
+.whatsAppAccessCard {
+    @apply flex justify-start items-center gap-sm bg-primary/15 backdrop-blur-md shadow-muted-foreground/5 shadow-md rounded-[clamp(16px,3vw,24px)]
+    w-full p-md cursor-pointer select-none;
+}
+
+.whatsAppIconContainer {
+    @apply bg-primary/5 text-primary w-12 h-12 flex justify-center items-center rounded-full aspect-square;
+}
+
+.whatsAppIcon {
+    @apply w-[clamp(35px,2vw,40px)] h-[clamp(35px,2vw,40px)];
+}
+
+.whatsAppContent {
+    @apply text-[clamp(13px,4vw,16px)];
+}
+
+.registrationPrompt {
+    @apply text-white;
+}
+
+.whatsAppAccessLink {
+    @apply text-primary font-medium -mt-px;
+}
+
+.whatsAppLinkIcon {
+    @apply hidden w-[clamp(28px,2.2vw,32px)] h-[clamp(28px,2.2vw,32px)] mx-auto text-primary
+    transition-all ease-linear duration-300
+    xs:block;
+}
+
+.whatsAppAccessCard:hover .whatsAppLinkIcon {
+    @apply translate-x-2;
+}
+
+.platformTrustList {
+    @apply flex justify-center items-center gap-x-6 text-md text-[#aaaaacd9] font-medium;
+}
+
+.platformTrustItem {
+    @apply relative flex justify-center items-center;
+}
+
+.platformTrustItem::before {
+    @apply content-[''] absolute inline-block h-1 w-1 bg-[#aaaaacd9] rounded-full
+    aspect-square -right-3;
+}
+
+.platformTrustItem:last-child:before {
+    @apply content-none;
+}
+
+
+
+
+
+
+
+
+
+

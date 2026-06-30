@@ -1,0 +1,74 @@
+.listingFeed {
+    @apply mt-[calc(var(--header-height)+8px)] pb-[calc(var(--footer-height)+var(--footer-height))]
+    grid gap-y-lg relative;
+}
+
+.listingFeed::before,
+.listingFeed::after {
+    @apply content-[''] inline-block fixed w-full left-1/2 -translate-x-1/2 z-10 pointer-events-none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.listingFeed::before {
+    @apply top-0 h-[calc(var(--header-height)+2.5rem)];
+    background: linear-gradient(to bottom,rgba(255,255,255,1) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.70) 60%,rgba(255,255,255,0) 100%);
+}
+
+.listingFeed::after {
+    @apply bottom-0 h-[calc(var(--footer-height)+1.8rem)];
+    background: linear-gradient(to top,rgba(255,255,255,1) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.70) 60%,rgba(255,255,255,0) 100%);
+}
+
+@supports (mask-image: linear-gradient(black, transparent)) or (-webkit-mask-image: linear-gradient(black, transparent)) {
+    .listingFeed::before,
+    .listingFeed::after {
+        background: rgba(255,255,255,.95);
+    }
+
+    .listingFeed::before {
+        -webkit-mask-image: linear-gradient(to bottom,black 40px,transparent);
+        mask-image: linear-gradient(to bottom,black 40px,transparent);
+    }
+
+    .listingFeed::after {
+        -webkit-mask-image: linear-gradient(to top,black 40px,transparent);
+        mask-image: linear-gradient(to top,black 40px,transparent);
+    }
+}
+
+.vehicleCard {
+    @apply border border-y-muted-foreground/25 rounded-md
+}
+
+.vehicleImage {
+    @apply aspect-video object-cover rounded-t-md max-h-[250px] w-full
+}
+
+.vehicleHeader {
+    @apply flex items-center justify-between gap-1 px-2
+    flex-wrap font-medium;
+}
+
+.vehicleTitle {
+    @apply text-md text-black;
+}
+
+.vehiclePrice {
+    @apply text-lg font-black text-primary;
+}
+
+.vehicleSpecs {
+    @apply flex items-center justify-start gap-sm px-2 flex-wrap
+    text-sm text-black/75 font-medium py-2;
+}
+
+.vehicleSpec {
+    @apply px-xs bg-muted-foreground/10 rounded-md;
+}
+
+.vehicleActions {
+    @apply px-2 grid grid-cols-2 gap-sm py-2;
+}
+
+

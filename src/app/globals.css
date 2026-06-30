@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-satoshi), sans-serif;
+  }
+
+  .pageGutter {
+    @apply px-5 py-3
+    sm:px-lg
+    lg:px-xl lg:py-4;
+  }
+
+  .layoutSection {
+    @apply w-full max-w-md mx-auto;
+  }
+
+  .formField {
+    @apply flex flex-col gap-y-1;
+  }
+
+  .formContent {
+    @apply flex flex-col gap-y-4;
+  }
+
+  .formInput,
+  .buttonPrimary,
+  .buttonSecondary {
+    @apply rounded-[10px] h-[clamp(2rem,3vw+2rem,2.8rem)] px-[clamp(0.75rem,2.8vw,1.5rem)];
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    @apply flex justify-center items-center gap-[6px] relative overflow-hidden z-[1]
+    [transition:color_0.45s_linear,border-color_0.5s_ease-out,background-color_0.45s_linear];
+  }
+
+  .buttonPrimary .arrowRight,
+  .buttonSecondary .arrowRight {
+    @apply transition-all ease-linear duration-300 rotate-[15deg];
+  }
+
+  .buttonPrimary:hover::before,
+  .buttonSecondary:hover::before {
+    @apply -translate-x-1/2 -translate-y-1/2 scale-[7];
+  }
+
+  .buttonPrimary::before,
+  .buttonSecondary::before {
+    @apply content-[""] absolute left-1/2 top-full w-16 h-16 rounded-full
+    -translate-x-[50%] scale-0 transition-transform duration-[800ms]
+    [easing:cubic-bezier(.66,0,.34,1)] -z-[1];
+  }
+
+  .buttonPrimary .btnLabel,
+  .buttonSecondary .btnLabel {
+    @apply transition-colors duration-[450ms] ease-linear
+    text-md select-none;
+  }
+
+  .buttonPrimary {
+    @apply bg-primary border border-black;
+  }
+
+  .buttonSecondary {
+    @apply bg-white border border-black;
+  }
+
+  .buttonPrimary::before {
+    @apply bg-black;
+  }
+
+  .buttonPrimary.light::before {
+    @apply bg-white;
+  }
+
+  .buttonSecondary::before {
+    @apply bg-black;
+  }
+
+  .buttonPrimary:hover {
+    @apply bg-white border-black;
+  }
+
+  .buttonPrimary.light:hover {
+    @apply bg-black border-white;
+  }
+
+  .buttonSecondary:hover {
+    @apply bg-black border-black;
+  }
+
+  .buttonPrimary .btnLabel,
+  .buttonPrimary .arrowRight,
+  .buttonSecondary .btnLabel,
+  .buttonSecondary .arrowRight {
+    @apply text-black;
+  }
+
+  .buttonPrimary:hover .btnLabel,
+  .buttonPrimary:hover .arrowRight,
+  .buttonSecondary:hover .btnLabel,
+  .buttonSecondary:hover .arrowRight {
+    @apply text-white;
+  }
+
+  .buttonPrimary.light:hover .btnLabel,
+  .buttonPrimary.light:hover .arrowRight,
+  .buttonSecondary.light:hover .btnLabel,
+  .buttonSecondary.light:hover .arrowRight {
+    @apply text-black;
+  }
+
+  .buttonPrimary .arrowRight,
+  .buttonSecondary .arrowRight {
+    @apply transition-all ease-linear duration-300;
+  }
+
+  .buttonPrimary:hover .arrowRight,
+  .buttonSecondary:hover .arrowRight {
+    @apply transition-all ease-linear duration-300 translate-x-1 rotate-[18deg];
+  }
+
+  .formInput {
+    @apply outline-none border border-muted-foreground/55;
+  }
+
+  .formLabel {
+    @apply text-md font-medium;
+  }
+
+  .inputGroup {
+    @apply grid grid-cols-6 items-center;
+  }
+
+  .inputGroup .formInput {
+    @apply col-span-5;
+  }
+
+  .inputGroup .inputPrefix {
+    @apply cursor-not-allowed rounded-tl-[10px] rounded-bl-[10px] h-[clamp(2rem,3vw+2rem,2.8rem)] px-[clamp(0.75rem,2.8vw,1.5rem)] select-none
+    outline-none border-l border-y border-muted-foreground/55 flex justify-center items-center text-md bg-muted-foreground/5 text-center;
+  }
+
+  .inputGroup .inputPrefix ~ .formInput {
+    @apply rounded-l-none;
+  }
+
+  .animatedUnderline,
+  .animatedUnderlineGroup .animatedUnderlineGroupItem {
+    @apply relative;
+  }
+
+  .animatedUnderline::before,
+  .animatedUnderlineGroup .animatedUnderlineGroupItem::before {
+    @apply content-[""] absolute inline-block h-[2px] w-0 bg-black rounded-full
+    left-0 -bottom-1 transition-all ease-linear duration-[450ms];
+  }
+
+  .animatedUnderlineGroup.light .animatedUnderlineGroupItem::before {
+    @apply bg-white/45;
+  }
+
+  .animatedUnderline:hover::before,
+  .animatedUnderlineGroup:hover .animatedUnderlineGroupItem::before {
+    @apply w-full;
+  }
+
+  .callDealerButton {
+    @apply border-primary;
+  }
+
+  .callDealerButton .btnLabel {
+    @apply text-primary;
+  }
+
+  .callDealerButton .icon-phonecall {
+    @apply text-primary transition-all ease-linear duration-300;
+  }
+
+  .callDealerButton:hover .icon-phonecall {
+    @apply text-white;
+  }
+
+  .whatsAppButton {
+    @apply border-white;
+  }
+
+  .whatsAppButton .btnLabel {
+    @apply text-white;
+  }
+
+  .whatsAppButton .icon-whatsapp {
+    @apply text-white;
+  }
+}

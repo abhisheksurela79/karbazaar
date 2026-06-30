@@ -1,0 +1,16 @@
+.dealerLoginForm {
+    @apply rounded-[clamp(16px,3vw,24px)] mx-sm px-md py-lg row-span-4 bg-primary/15 
+    backdrop-blur-md border border-white/75 shadow-[0_20px_60px_rgba(15,23,42,.08)];
+}
+
+.loginHeader {
+    @apply mb-md;
+}
+
+.loginHeading {
+    @apply text-[clamp(18px,5vw,20px)] gap-xs font-medium text-white/95 flex items-center;
+}
+
+.loginDescription {
+    @apply text-[#aaaaacd9] font-medium text-sm;
+}

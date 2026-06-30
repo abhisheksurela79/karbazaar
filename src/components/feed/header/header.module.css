@@ -1,0 +1,18 @@
+.marketplaceTabs {
+    @apply grid grid-cols-2 bg-transparent fixed top-0
+    left-1/2 -translate-x-1/2 w-full z-50;
+}
+
+.marketplaceTabButton {
+    @apply px-lg py-sm flex justify-center items-center relative
+    text-md font-medium text-black/75 text-nowrap;
+}
+
+.marketplaceTabButton.isActive {
+    @apply text-primary/85 transition-colors ease-linear duration-[450ms];
+}
+
+.marketplaceTabButton.isActive::before {
+    @apply content-[""] absolute inline-block w-full h-1 rounded-full bg-primary
+    bottom-0 transition-all ease-linear duration-[450ms];
+}
