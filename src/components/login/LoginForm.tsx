@@ -7,7 +7,7 @@ import { REGEXP_ONLY_DIGITS } from "input-otp"
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/common/ui/input-otp";
 
 export default function LoginForm() {
-  const [step, setStep] = useState<1 | 2>(2);
+  const [step, setStep] = useState<1 | 2>(1);
   const [phone, setPhone] = useState("");
   const [pin, setPin] = useState<string[]>(new Array(4).fill(""));
   const inputRefs = useRef<HTMLInputElement[]>([]);
